@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/4f696318e6.js" crossorigin="anonymous"></script>  <link rel="stylesheet" href="./output.css" />
   <title>CodeTest-Dashboard</title>
 </head>
@@ -68,6 +68,40 @@
       </div>
     </div>
     <!-- Sidebar ends -->
+    <!-- Navigation starts -->
+    <nav class="h-28 w-full flex items-center  justify-between  bg-white  relative z-10 ">
+
+      <div class="flex-col">
+        <div class="py-4" style="width: 100%;">
+            <div class="flex-1">
+              <a href="javascript:void(0)" class=" text-4xl font-Poppins font-bold text-blue">Dashboard</a>
+            </div>
+            <div class="flex-1">
+              <a href="javascript:void(0)" class="text-xl font-Poppins font-extralight text-black">CAMPAIGN MANAGER</a>
+            </div>
+        </div>
+      </div>
+      <!-- Search bar and notifications stacked on right side -->
+
+        <!-- add search input to right side -->
+        <div class="flex-col">
+
+        <div class="flex items-center ml-4 pr-6 h-11">
+          <i class="fas fa-search fa-2x ml-2 p-2"></i>
+
+          <input type="text" class="w-full h-full pl-4 pr-8 py-2 bg-white border-2 color-black border-gray-400 focus:outline-none" placeholder="Search">
+        </div>
+        <!-- advanced search link on right -->
+        <div class="flex items-center justify-end mr-6">
+          <a href="javascript:void(0)" class="text-sm font-Poppins font-extralight text-blue underline">Advanced Search</a>
+        </div>
+
+
+        </div>
+
+    </nav>
+    <!-- Navigation ends -->
+
 
   </div>
 
