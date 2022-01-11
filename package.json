@@ -19,5 +19,9 @@
   "homepage": "https://github.com/DaveToth77/CodeTest-Dashboard#readme",
   "devDependencies": {
     "tailwindcss": "^3.0.13"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss-cli": "^9.1.0"
   }
 }
