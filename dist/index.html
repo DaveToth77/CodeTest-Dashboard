@@ -21,6 +21,8 @@
     <div class="w-full h-full bg-white">
       <div class="flex flex-no-wrap">
         <!-- Sidebar starts -->
+        <!--todo - coded for fixed sidebar, to be replaced with dynamic sidebar -->
+        <!--! links not active/need routing -->
         <div
           style="min-height: 700px"
           class="absolute lg:relative w-1/5 h-screen bg-white hidden lg:block font-Poppins"
@@ -38,7 +40,7 @@
                 <i class="fas fa-tachometer-alt fa-2x text-blue"></i>
                 <a
                   href="javascript:void(0)"
-                  class="ml-2 text-xl font-Poppins font-thin"
+                  class="ml-2 text-xl font-Poppins font-light"
                   >Dashboard</a
                 >
               </div>
@@ -130,6 +132,7 @@
             </div>
 
             <!-- add search input to right side -->
+            <!--! search function not active/needs API route -->
             <div class="flex-col">
               <div class="flex items-center ml-4 pr-6 h-11">
                 <i class="fas fa-search fa-2x ml-2 p-2"></i>
@@ -157,10 +160,11 @@
               <div class="flex justify-between">
                 <div class="flex items-center justify-center p-4">
                   <i class="far fa-star"></i>
-                  <span class="text-lg font-Poppins text-blue font-semibold"
+                  <span class="text-lg font-Poppins text-blue font-semibold ml-2"
                     >Favorites</span
                   >
                   <!-- See All link -->
+                  <!-- todo - expand Favorites div down to see all cards on See All click -->
                   <a
                     href="javascript:void(0)"
                     class="text-xs font-Poppins ml-4 font-extralight text-darkBlue underline"
@@ -168,6 +172,7 @@
                   >
                 </div>
                 <!-- add left/right arrows to scroll -->
+                <!-- todo - hide scrollbar, add slider functionality to arrow icons -->
                 <div class="flex items-center justify-center p-4">
                   <i
                     class="fas fa-chevron-left bg-darkBlue text-white p-1 mx-2"
@@ -189,6 +194,7 @@
                         class="text-black flex items-center font-bold text-2xl"
                         >AVI1958872W - Ended</span
                       >
+                      <!--! pop out menu needs routes for menu item clicks -->
                       <button
                         aria-label="dropdown"
                         class="cursor-pointer relative"
@@ -198,7 +204,7 @@
                         <!-- <div class="border-t border-grey-300 pt-6 flex items-center justify-between"> -->
 
                         <ul
-                          class="flex flex-col justify-items-start bg-white shadow-md shadow-slate-300 z-40 py-1 w-48 absolute hidden -top-8 -right-8"
+                          class="flex-col justify-items-start bg-white shadow-md shadow-slate-300 z-40 py-1 w-48 absolute hidden -top-8 -right-8"
                         >
                           <li
                             tabindex="0"
@@ -801,7 +807,6 @@
                     >See All</a
                   >
                 </div>
-                <!-- add left/right arrows to scroll -->
                 <div class="flex items-center justify-center p-4">
                   <i
                     class="fas fa-chevron-left bg-darkBlue text-white p-1 mx-2"
@@ -933,13 +938,13 @@
                     </div>
                   </div>
                 </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     <script src="./script.js"></script>
   </body>
 </html>
