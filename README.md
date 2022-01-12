@@ -15,6 +15,8 @@
 #### Usage
 
     open index.html in browser for preview
+    
+![Screen Shot 2022-01-12 at 4 23 09 PM](https://user-images.githubusercontent.com/85111342/149229063-dab40266-83be-468f-ba84-9690b48e289c.png)
 
 #### Notes
 To complete the code review I decided to use just HTML/CSS because functionality with a database was not required. I used TailwindCSS to style the page. I have recently done a project with it and wanted some additional practice. I felt it was a good compromise because it is a utility library so all components were done with HTML/CSS rather than imported.
