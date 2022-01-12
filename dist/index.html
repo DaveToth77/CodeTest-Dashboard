@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html class="h-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4f696318e6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./output.css" />
+    <title>CodeTest-Dashboard</title>
+  </head>
+  <body>
+    <div class="w-full h-full bg-white">
+      <div class="flex flex-no-wrap">
+        <!-- Sidebar starts -->
+        <!--todo - coded for fixed sidebar, to be replaced with dynamic sidebar -->
+        <!--! links not active/need routing -->
+        <div
+          style="min-height: 700px"
+          class="absolute lg:relative w-1/5 h-screen bg-white hidden lg:block font-Poppins"
+        >
+          <div class="h-16 w-full flex items-center pt-6 pl-2 pr-8">
+            <img src="../assets/images/amg-logo-lrg.svg" alt="amg-logo" />
+          </div>
+          <div class="flex"></div>
+          <ul class="py-6">
+            <li
+              class="pl-6 pb-2 cursor-pointer text-black text-sm leading-3 tracking-normal my-4 focus:outline-none"
+            >
+              <div class="flex items-center">
+                <div></div>
+                <i class="fas fa-tachometer-alt fa-2x text-blue"></i>
+                <a
+                  href="javascript:void(0)"
+                  class="ml-2 text-xl font-Poppins font-light"
+                  >Dashboard</a
+                >
+              </div>
+            </li>
+            <li
+              class="pl-6 cursor-pointer text-black text-sm leading-3 tracking-normal pb-2 my-4 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none"
+            >
+              <div class="flex items-center">
+                <i class="fas fa-bullhorn fa-2x text-blue"></i>
+                <a
+                  href="javascript:void(0)"
+                  class="ml-2 text-xl font-Poppins font-light"
+                  >Campaigns</a
+                >
+              </div>
+            </li>
+            <li
+              class="pl-6 pb-2 cursor-pointer text-black text-sm leading-3 tracking-normal my-4 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none"
+            >
+              <div class="flex items-center">
+                <i class="fas fa-mail-bulk fa-2x text-blue"></i>
+                <a href="javascript:void(0)" class="ml-2 text-xl font-Poppins"
+                  >Submissions</a
+                >
+              </div>
+            </li>
+            <li
+              class="pl-6 pb-2 cursor-pointer text-black text-sm leading-3 tracking-normal my-4 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none"
+            >
+              <div class="flex items-center fa-2x">
+                <i class="fas fa-users text-blue"></i>
+                <a href="javascript:void(0)" class="ml-2 text-xl font-Poppins"
+                  >Users</a
+                >
+              </div>
+            </li>
+            <li
+              class="pl-6 cursor-pointer text-sm leading-3 tracking-normal my-4 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none"
+            >
+              <div class="flex items-center">
+                <i class="fas fa-chart-pie fa-2x text-blue"></i>
+                <a href="javascript:void(0)" class="ml-2 text-xl font-Poppins"
+                  >Custom Reports</a
+                >
+              </div>
+            </li>
+          </ul>
+          <div id="profile" class="absolute bottom-8 pl-5">
+            <i class="fas fa-user-circle fa-2x pb-2 text-blue"></i>
+            <div class="font-semibold text-blue">Welcome Stephanie!</div>
+            <div class="flex justify-between">
+              <a
+                href="myaccount.com"
+                class="text-sm font-Poppins underline text-darkBlue"
+                >My Account</a
+              >
+              |
+              <a
+                href="amg.com/signout"
+                class="text-sm font-Poppins underline text-darkBlue"
+                >Sign Out</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Sidebar ends -->
+        <!-- Navigation starts -->
+        <div class="w-full">
+          <nav
+            class="h-28 w-full flex items-center justify-between bg-white relative z-10"
+          >
+            <div class="flex-col">
+              <div class="py-4" style="width: 100%">
+                <div class="flex-1">
+                  <a
+                    href="javascript:void(0)"
+                    class="text-4xl font-Poppins font-bold text-blue"
+                    >Dashboard</a
+                  >
+                </div>
+                <div class="flex-1">
+                  <a
+                    href="javascript:void(0)"
+                    class="text-xl font-Poppins font-extralight text-black"
+                    >CAMPAIGN MANAGER</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- add search input to right side -->
+            <!--! search function not active/needs API route -->
+            <div class="flex-col">
+              <div class="flex items-center ml-4 pr-6 h-11">
+                <i class="fas fa-search fa-2x ml-2 p-2"></i>
+
+                <input
+                  type="text"
+                  class="w-full h-full pl-4 pr-8 py-2 bg-white border-2 color-black border-gray-400 focus:outline-none"
+                  placeholder="Search"
+                />
+              </div>
+              <!-- advanced search link on right -->
+              <div class="flex items-center justify-end mr-6">
+                <a
+                  href="javascript:void(0)"
+                  class="text-sm font-Poppins font-extralight text-blue underline"
+                  >Advanced Search</a
+                >
+              </div>
+            </div>
+          </nav>
+          <!-- Navigation ends -->
+          <!-- Main content starts -->
+          <div class="container w-full">
+            <div class="w-full h-full bg-off-white">
+              <div class="flex justify-between">
+                <div class="flex items-center justify-center p-4">
+                  <i class="far fa-star"></i>
+                  <span class="text-lg font-Poppins text-blue font-semibold ml-2"
+                    >Favorites</span
+                  >
+                  <!-- See All link -->
+                  <!-- todo - expand Favorites div down to see all cards on See All click -->
+                  <a
+                    href="javascript:void(0)"
+                    class="text-xs font-Poppins ml-4 font-extralight text-darkBlue underline"
+                    >See All</a
+                  >
+                </div>
+                <!-- add left/right arrows to scroll -->
+                <!-- todo - hide scrollbar, add slider functionality to arrow icons -->
+                <div class="flex items-center justify-center p-4">
+                  <i
+                    class="fas fa-chevron-left bg-darkBlue text-white p-1 mx-2"
+                  ></i>
+                  <i
+                    class="fas fa-chevron-right bg-darkBlue text-white p-1"
+                  ></i>
+                </div>
+              </div>
+              <div class="container flex overflow-auto ">
+                <div class="inline-flex my-2 justify-content">
+                  <div
+                    class="bg-white w-auto text-Poppins flex-row p-8 m-3 h-112"
+                  >
+                    <div
+                      class="flex justify-between border-b-2 border-darkBlue mb-2"
+                    >
+                      <span
+                        class="text-black flex items-center font-bold text-2xl"
+                        >AVI1958872W - Ended</span
+                      >
+                      <!--! pop out menu needs routes for menu item clicks -->
+                      <button
+                        aria-label="dropdown"
+                        class="cursor-pointer relative"
+                        onclick="dropdownHandler(this)"
+                      >
+                        <i class="fas fa-ellipsis-v text-darkBlue"></i>
+                        <!-- <div class="border-t border-grey-300 pt-6 flex items-center justify-between"> -->
+
+                        <ul
+                          class="flex-col justify-items-start bg-white shadow-md shadow-slate-300 z-40 py-1 w-48 absolute hidden -top-8 -right-8"
+                        >
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            View Campaign Details
+                          </li>
+
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Edit Campaign
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            View Submissions
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Download Submissions
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Remove Favorite
+                          </li>
+                        </ul>
+                      </button>
+                    </div>
+                    <div class="flex">
+                      <div
+                        class="bg-darkBlue text-Poppins text-white p-1 flex flex-col"
+                      >
+                        <i class="fas fa-share-alt pr-2"> 2</i>
+                      </div>
+                      <div
+                        class="text-Poppins font-semibold text-darkBlue text-xl pl-6"
+                      >
+                        Loyalty
+                      </div>
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="title text-Poppins text-xl font-light py-1">
+                        Wine Cooler Loyalty Program
+                      </div>
+                      <div class="url text-Poppins text-xl font-light py-1">
+                        winecoolerdeal.com
+                      </div>
+                      <div class="date text-Poppins text-xl font-light py-1">
+                        06/01/2020 - 07/15/2021
+                      </div>
+                      <div
+                        class="stats bg-off-white flex justify-between py-4 mt-16"
+                      >
+                        <div
+                          class="text-Poppins flex flex-col text-xl text-blue font-semibold px-6"
+                        >
+                          <i
+                            class="fas fa-mail-bulk fa-lg text-lightBlue p-1"
+                          ></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >254</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col text-xl font-semibold px-6"
+                        >
+                          <i class="fas fa-users fa-lg text-lightBlue p-1"></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >197</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col text-xl font-semibold px-6"
+                        >
+                          <i class="fas fa-tshirt fa-lg text-lightBlue p-1"></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >72</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col justify-center text-xl font-semibold px-6"
+                        >
+                          <i
+                            class="fas fa-receipt text-lightBlue fa-lg p-1"
+                          ></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >26</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="inline-flex m-2 justify-content ">
+                  <div
+                    class="bg-white w-auto text-Poppins flex-row p-8 m-3 border-l-4  border-red h-112"
+                  >
+                    <div
+                      class="flex justify-between border-b-2 border-darkBlue mb-2"
+                    >
+                      <span
+                        class="text-black flex items-center font-bold text-2xl"
+                        >AVI20477872W - Ended</span
+                      >
+                      <button
+                        aria-label="dropdown"
+                        class="cursor-pointer relative"
+                        onclick="dropdownHandler(this)"
+                      >
+                        <i class="fas fa-ellipsis-v text-darkBlue"></i>
+                        <!-- <div class="border-t border-grey-300 pt-6 flex items-center justify-between"> -->
+
+                        <ul
+                          class="flex flex-col justify-items-start bg-white shadow-md shadow-slate-300 z-40 py-1 w-48 absolute hidden -top-8 -right-8"
+                        >
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            View Campaign Details
+                          </li>
+
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Edit Campaign
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            View Submissions
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Download Submissions
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Remove Favorite
+                          </li>
+                        </ul>
+                      </button>
+                    </div>
+                    <div class="flex">
+                      <div
+                        class="bg-darkBlue text-Poppins text-white p-1 flex flex-col"
+                      >
+                        <i class="fas fa-share-alt pr-2"> 2</i>
+                      </div>
+                      <div
+                        class="text-Poppins font-semibold text-darkBlue text-xl pl-6"
+                      >
+                        SSE + Sweeps
+                      </div>
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="title text-Poppins text-xl font-light pt-1">
+                        Summer Portfolio
+                      </div>
+                      <div class="url text-Poppins text-xl font-light pt-1">
+                        drivesafesummer.com
+                      </div>
+                      <div class="date text-Poppins text-xl font-light pt-1">
+                        05/01/2020 - 08/30/2021
+                      </div>
+                      <div class="redemption text-Poppins text-xl font-semibold pt-1 text-red">
+                        $1500 Max Redemption
+                      </div>
+                      <div class="prizes text-Poppins text-xl font-light py-1">
+                        15 Total Prizes
+                      </div>
+                      <div
+                        class="stats bg-off-white flex justify-between py-4 mt-2 text-center"
+                      >
+                        <div
+                          class="text-Poppins flex flex-col text-xl text-blue font-semibold px-6"
+                        >
+                          <i
+                            class="fas fa-mail-bulk fa-lg text-lightBlue p-1"
+                          ></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >254</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col text-xl font-semibold px-6"
+                        >
+                          <i class="fas fa-users fa-lg text-lightBlue p-1"></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >197</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins text-xl font-semibold px-6"
+                        >
+                          <i class="fas fa-hand-holding-usd fa-lg text-red  p-1"></i>
+                          <span class="text-red"
+                            >$1450</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col justify-center text-xl font-semibold px-6 "
+                        >
+                          <i
+                            class="fas fa-receipt text-lightBlue fa-lg p-1"
+                          ></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >26</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="inline-flex m-2 justify-content">
+                  <div
+                    class="bg-white w-auto text-Poppins h-auto flex-row p-8 m-3"
+                  >
+                    <div
+                      class="flex justify-between border-b-2 border-darkBlue mb-2"
+                    >
+                      <span
+                        class="text-black flex items-center font-bold text-2xl"
+                        >AVI1958872W - Ended</span
+                      >
+                      <button
+                        aria-label="dropdown"
+                        class="cursor-pointer relative"
+                        onclick="dropdownHandler(this)"
+                      >
+                        <i class="fas fa-ellipsis-v text-darkBlue"></i>
+                        <!-- <div class="border-t border-grey-300 pt-6 flex items-center justify-between"> -->
+
+                        <ul
+                          class="flex flex-col justify-items-start bg-white shadow-md shadow-slate-300 z-40 py-1 w-48 absolute hidden -top-8 -right-8"
+                        >
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            View Campaign Details
+                          </li>
+
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Edit Campaign
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            View Submissions
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Download Submissions
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Remove Favorite
+                          </li>
+                        </ul>
+                      </button>
+                    </div>
+                    <div class="flex">
+                      <div
+                        class="bg-darkBlue text-Poppins text-white p-1 flex flex-col"
+                      >
+                        <i class="fas fa-share-alt pr-2"> 2</i>
+                      </div>
+                      <div
+                        class="text-Poppins font-semibold text-darkBlue text-xl pl-6"
+                      >
+                        Loyalty
+                      </div>
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="title text-Poppins text-xl font-light py-1">
+                        Wine Cooler Loyalty Program
+                      </div>
+                      <div class="url text-Poppins text-xl font-light py-1">
+                        winecoolerdeal.com
+                      </div>
+                      <div class="date text-Poppins text-xl font-light py-1">
+                        06/01/2020 - 07/15/2021
+                      </div>
+                      <div
+                        class="stats bg-off-white flex justify-between py-4 mt-16"
+                      >
+                        <div
+                          class="text-Poppins flex flex-col text-xl text-blue font-semibold px-6"
+                        >
+                          <i
+                            class="fas fa-mail-bulk fa-lg text-lightBlue p-1"
+                          ></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >254</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col text-xl font-semibold px-6"
+                        >
+                          <i class="fas fa-users fa-lg text-lightBlue p-1"></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >197</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col text-xl font-semibold px-6"
+                        >
+                          <i class="fas fa-tshirt fa-lg text-lightBlue p-1"></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >72</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col justify-center text-xl font-semibold px-6"
+                        >
+                          <i
+                            class="fas fa-receipt text-lightBlue fa-lg p-1"
+                          ></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >26</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="inline-flex m-2 justify-content">
+                  <div
+                    class="bg-white w-auto text-Poppins h-auto flex-row p-8 m-3"
+                  >
+                    <div
+                      class="flex justify-between border-b-2 border-darkBlue mb-2"
+                    >
+                      <span
+                        class="text-black flex items-center font-bold text-2xl"
+                        >AVI1958872W - Ended</span
+                      >
+                      <button
+                        aria-label="dropdown"
+                        class="cursor-pointer relative"
+                        onclick="dropdownHandler(this)"
+                      >
+                        <i class="fas fa-ellipsis-v text-darkBlue"></i>
+
+                        <ul
+                          class="flex flex-col justify-items-start bg-white shadow-md shadow-slate-300 z-40 py-1 w-48 absolute hidden -top-8 -right-8"
+                        >
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            View Campaign Details
+                          </li>
+
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Edit Campaign
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            View Submissions
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Download Submissions
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Remove Favorite
+                          </li>
+                        </ul>
+                      </button>
+                    </div>
+                    <div class="flex">
+                      <div
+                        class="bg-darkBlue text-Poppins text-white p-1 flex flex-col"
+                      >
+                        <i class="fas fa-share-alt pr-2"> 2</i>
+                      </div>
+                      <div
+                        class="text-Poppins font-semibold text-darkBlue text-xl pl-6"
+                      >
+                        Loyalty
+                      </div>
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="title text-Poppins text-xl font-light py-1">
+                        Wine Cooler Loyalty Program
+                      </div>
+                      <div class="url text-Poppins text-xl font-light py-1">
+                        winecoolerdeal.com
+                      </div>
+                      <div class="date text-Poppins text-xl font-light py-1">
+                        06/01/2020 - 07/15/2021
+                      </div>
+                      <div
+                        class="stats bg-off-white flex justify-between py-4 mt-16"
+                      >
+                        <div
+                          class="text-Poppins flex flex-col text-xl text-blue font-semibold px-6"
+                        >
+                          <i
+                            class="fas fa-mail-bulk fa-lg text-lightBlue p-1"
+                          ></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >254</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col text-xl font-semibold px-6"
+                        >
+                          <i class="fas fa-users fa-lg text-lightBlue p-1"></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >197</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col text-xl font-semibold px-6"
+                        >
+                          <i class="fas fa-tshirt fa-lg text-lightBlue p-1"></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >72</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col justify-center text-xl font-semibold px-6"
+                        >
+                          <i
+                            class="fas fa-receipt text-lightBlue fa-lg p-1"
+                          ></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >26</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="inline-flex m-2 justify-content">
+                  <div
+                    class="bg-white w-auto text-Poppins h-auto flex-row p-8 m-3"
+                  >
+                    <div
+                      class="flex justify-between border-b-2 border-darkBlue mb-2"
+                    >
+                      <span
+                        class="text-black flex items-center font-bold text-2xl"
+                        >AVI1958872W - Ended</span
+                      >
+                      <button
+                        aria-label="dropdown"
+                        class="cursor-pointer relative"
+                        onclick="dropdownHandler(this)"
+                      >
+                        <i class="fas fa-ellipsis-v text-darkBlue"></i>
+
+                        <ul
+                          class="flex flex-col justify-items-start bg-white shadow-md shadow-slate-300 z-40 py-1 w-48 absolute hidden -top-8 -right-8"
+                        >
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            View Campaign Details
+                          </li>
+
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Edit Campaign
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            View Submissions
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Download Submissions
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Remove Favorite
+                          </li>
+                        </ul>
+                      </button>
+                    </div>
+                    <div class="flex">
+                      <div
+                        class="bg-darkBlue text-Poppins text-white p-1 flex flex-col"
+                      >
+                        <i class="fas fa-share-alt pr-2"> 2</i>
+                      </div>
+                      <div
+                        class="text-Poppins font-semibold text-darkBlue text-xl pl-6"
+                      >
+                        Loyalty
+                      </div>
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="title text-Poppins text-xl font-light py-1">
+                        Wine Cooler Loyalty Program
+                      </div>
+                      <div class="url text-Poppins text-xl font-light py-1">
+                        winecoolerdeal.com
+                      </div>
+                      <div class="date text-Poppins text-xl font-light py-1">
+                        06/01/2020 - 07/15/2021
+                      </div>
+                      <div
+                        class="stats bg-off-white flex justify-between py-4 mt-16"
+                      >
+                        <div
+                          class="text-Poppins flex flex-col text-xl text-blue font-semibold px-6"
+                        >
+                          <i
+                            class="fas fa-mail-bulk fa-lg text-lightBlue p-1"
+                          ></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >254</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col text-xl font-semibold px-6"
+                        >
+                          <i class="fas fa-users fa-lg text-lightBlue p-1"></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >197</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col text-xl font-semibold px-6"
+                        >
+                          <i class="fas fa-tshirt fa-lg text-lightBlue p-1"></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >72</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col justify-center text-xl font-semibold px-6"
+                        >
+                          <i
+                            class="fas fa-receipt text-lightBlue fa-lg p-1"
+                          ></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >26</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                            <div class="flex justify-between mt-6 ">
+                <div class="flex items-center justify-center p-4  ">
+                  <i class="far fa-calendar-alt "></i>
+                  <span class="text-lg font-Poppins text-blue font-semibold ml-2"
+                    >Currently Live</span
+                  >
+                  <!-- See All link -->
+                  <a
+                    href="javascript:void(0)"
+                    class="text-xs font-Poppins ml-4 font-extralight text-darkBlue underline"
+                    >See All</a
+                  >
+                </div>
+                <div class="flex items-center justify-center p-4">
+                  <i
+                    class="fas fa-chevron-left bg-darkBlue text-white p-1 mx-2"
+                  ></i>
+                  <i
+                    class="fas fa-chevron-right bg-darkBlue text-white p-1"
+                  ></i>
+                </div>
+              </div>
+                            <div class="container flex overflow-auto">
+                <div class="inline-flex my-2 justify-content">
+                  <div
+                    class="bg-white w-auto text-Poppins h-auto flex-row p-6 m-3"
+                  >
+                    <div
+                      class="flex justify-between border-b-2 border-darkBlue mb-2"
+                    >
+                      <span
+                        class="text-black flex items-center font-bold text-2xl"
+                        >AVI1958872W - Live</span
+                      >
+                      <button
+                        aria-label="dropdown"
+                        class="cursor-pointer relative"
+                        onclick="dropdownHandler(this)"
+                      >
+                        <i class="fas fa-ellipsis-v text-darkBlue"></i>
+                        <!-- <div class="border-t border-grey-300 pt-6 flex items-center justify-between"> -->
+
+                        <ul
+                          class="flex flex-col justify-items-start bg-white shadow-md shadow-slate-300 z-40 py-1 w-48 absolute hidden -top-8 -right-8"
+                        >
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            View Campaign Details
+                          </li>
+
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Edit Campaign
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            View Submissions
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Download Submissions
+                          </li>
+                          <li
+                            tabindex="0"
+                            class="text-Poppins text-left font-light cursor-pointer text-blue text-sm leading-3 tracking-normal py-2 hover:bg-blue hover:text-darkBlue focus:bg-off-white focus:text-blue px-3"
+                          >
+                            Remove Favorite
+                          </li>
+                        </ul>
+                      </button>
+                    </div>
+                    <div class="flex">
+                      <div
+                        class="bg-darkBlue text-Poppins text-white p-1 flex flex-col"
+                      >
+                        <i class="fas fa-share-alt pr-2"> 2</i>
+                      </div>
+                      <div
+                        class="text-Poppins font-semibold text-darkBlue text-xl pl-6"
+                      >
+                        Sweeps
+                      </div>
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="title text-Poppins text-xl font-light py-1">
+                        Hoodie Sweepstakes
+                      </div>
+                      <div class="url text-Poppins text-xl font-light py-1">
+                        winahoodie.com
+                      </div>
+                      <div class="date text-Poppins text-xl font-light py-1">
+                        06/01/2020 - 07/15/2021
+                      </div>
+                      <div
+                        class="stats bg-off-white flex justify-between py-4 mt-16"
+                      >
+                        <div
+                          class="text-Poppins flex flex-col text-xl text-blue font-semibold px-6"
+                        >
+                          <i
+                            class="fas fa-mail-bulk fa-lg text-lightBlue p-1"
+                          ></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >254</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col text-xl font-semibold px-6"
+                        >
+                          <i class="fas fa-users fa-lg text-lightBlue p-1"></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >197</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col text-xl font-semibold px-6"
+                        >
+                          <i class="fas fa-tshirt fa-lg text-lightBlue p-1"></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >72</span
+                          >
+                        </div>
+                        <div
+                          class="text-Poppins flex flex-col justify-center text-xl font-semibold px-6"
+                        >
+                          <i
+                            class="fas fa-receipt text-lightBlue fa-lg p-1"
+                          ></i>
+                          <span class="text-darkBlue flex justify-center"
+                            >26</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
